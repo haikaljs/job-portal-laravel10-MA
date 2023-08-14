@@ -11,10 +11,8 @@ use Auth;
 class AdminLoginController extends Controller
 {
     public function index(){
-        return view('admin.login');
-    }
-
-    public function login(){
+        $pass = Hash::make('1234');
+        dd($pass);
         return view('admin.login');
     }
 
