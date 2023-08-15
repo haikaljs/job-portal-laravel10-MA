@@ -28,10 +28,24 @@
                                 <h4 class="text-center">Reset Password</h4>
                             </div>
                             <div class="card-body card-body-auth">
-                                <form method="POST" action="">
+                                @if(session()->get('error'))
+                                <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                                    <strong>{{ session()->get('error') }}</strong> 
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                 @endif
+                            
+                                <form method="POST" action="{{ route('admin_forget_password_submit')}}">
+                                @csrf
                                     <div class="form-group">
-                                        <input type="email" class="form-control" name="email" placeholder="Email Address" value="" autofocus>
+                                        <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email Address" autofocus>
+                                    @error('email')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                     </div>
+                                    
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary btn-lg btn-block">
                                             Send Password Reset Link
