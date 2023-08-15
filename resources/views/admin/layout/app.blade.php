@@ -48,7 +48,7 @@
             <script>
                 iziToast.error({
                     title: '',
-                    position: 'topRight',
+                    position: 'topCenter',
                     message: '{{ $error }}',
                 });
             </script>
@@ -60,7 +60,7 @@
             <script>
                 iziToast.error({
                     title: '',
-                    position: 'topRight',
+                    position: 'topCenter',
                     message: "{{ session()->get('error') }}",
                 });
             </script>
@@ -70,7 +70,7 @@
         <script>
             iziToast.success({
                 title: '',
-                position: 'topRight',
+                position: 'topCenter',
                 message: "{{ session()->get('success') }}",
             });
         </script>

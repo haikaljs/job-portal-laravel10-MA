@@ -28,22 +28,22 @@
                                
                             </div>
                             <div class="card-body card-body-auth">
-                                @if(session()->get('error'))
+                                {{-- @if(session()->get('error'))
                                 <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
                                     <strong>{{ session()->get('error') }}</strong> 
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
-                                 @endif
-                                 @if(session()->get('success'))
+                                 @endif --}}
+                                 {{-- @if(session()->get('success'))
                                  <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
                                      <strong>{{ session()->get('success') }}</strong> 
                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                        <span aria-hidden="true">&times;</span>
                                      </button>
                                    </div>
-                                  @endif
+                                  @endif --}}
                                 <form method="POST" action="{{ route('admin_login_submit') }}">
                                     @csrf
                                     <div class="form-group">
@@ -82,6 +82,26 @@
 </div>
 
 @include('admin.layout.scripts_footer')
+
+@if (session()->get('success'))
+<script>
+    iziToast.success({
+        title: '',
+        position: 'topCenter',
+        message: "{{ session()->get('success') }}",
+    });
+</script>
+@endif
+
+@if (session()->get('error'))
+<script>
+    iziToast.error({
+        title: '',
+        position: 'topCenter',
+        message: "{{ session()->get('error') }}",
+    });
+</script>
+@endif
 
 </body>
 </html>
