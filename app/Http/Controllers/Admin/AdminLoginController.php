@@ -66,7 +66,7 @@ class AdminLoginController extends Controller
 
     public function logout(){
         Auth::guard('admin')->logout();
-        return redirect()->route('admin_login');
+        return redirect()->route('admin_login')->with('success', 'You are logout successfully');
     }
 
     public function reset_password($token, $email){
