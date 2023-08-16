@@ -13,10 +13,10 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('admin_job_category_create') }}" method="post" >
+                    <form action="{{ route('admin_job_category_store') }}" method="post" >
                         @csrf
                         <div class="form-group mb-3">
-                            <label>Catefory Name *</label>
+                            <label>Category Name *</label>
                             <input type="text" class="form-control" name="name" value="">
                         </div>
                         <div class="form-group mb-3">
@@ -24,7 +24,7 @@
                             <input type="text" class="form-control" name="icon" value="">
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
                         </div>
                     </form>
                 </div>

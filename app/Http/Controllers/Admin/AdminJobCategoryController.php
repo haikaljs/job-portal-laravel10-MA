@@ -14,7 +14,21 @@ class AdminJobCategoryController extends Controller
     }
 
     public function create(){
-       
         return view('admin.job_category_create');
+    }
+
+    public function store(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'icon' => 'required',
+        
+        ]);
+
+        $obj = new JobCategory();
+        $obj->name = $request->name;
+        $obj->icon = $request->icon;
+        $obj->save();
+
+        return redirect()->route('admin_job_category')->with('success', 'Data successfully saved');
     }
 }

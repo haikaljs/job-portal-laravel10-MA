@@ -55,7 +55,9 @@ Route::middleware(['admin:admin'])->group(function(){
 
     Route::get('/admin/job-category/view', [AdminJobCategoryController::class, 'index'])->name('admin_job_category');
 
-    Route::get('/admin/job-category/add', [AdminJobCategoryController::class, 'create'])->name('admin_job_category_create');
+    Route::get('/admin/job-category/create', [AdminJobCategoryController::class, 'create'])->name('admin_job_category_create');
+
+    Route::post('/admin/job-category/store', [AdminJobCategoryController::class, 'store'])->name('admin_job_category_store');
     
 });
 
