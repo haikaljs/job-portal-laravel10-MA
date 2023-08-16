@@ -6,6 +6,7 @@ use App\Http\Controllers\Front\TermsController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminProfileController;
+use App\Http\Controllers\Admin\AdminHomePageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,9 @@ use App\Http\Controllers\Admin\AdminProfileController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('terms', [TermsController::class, 'index'])->name('terms');
 
+
 // Admin
 
-Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin_home')->middleware('admin:admin');
 
 Route::get('/admin/login', [AdminLoginController::class, 'index'])->name('admin_login');
 
@@ -39,6 +40,15 @@ Route::get('/admin/reset-password/{token}/{email}', [AdminLoginController::class
 
 Route::post('/admin/reset-password-submit', [AdminLoginController::class, 'reset_password_submit'])->name('admin_reset_password_submit');
 
-Route::get('/admin/edit-profile', [AdminProfileController::class, 'index'])->name('admin_profile')->middleware('admin:admin');
 
-Route::post('/admin/edit-profile-submit', [AdminProfileController::class, 'profile_submit'])->name('admin_profile_submit');
+Route::middleware(['admin:admin'])->group(function(){
+    Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin_home');
+
+    Route::get('/admin/edit-profile', [AdminProfileController::class, 'index'])->name('admin_profile');
+
+    Route::post('/admin/edit-profile-submit', [AdminProfileController::class, 'profile_submit'])->name('admin_profile_submit');
+
+    Route::get('/admin/home-page', [AdminHomePageController::class, 'index'])->name('admin_home_page');
+    
+});
+
