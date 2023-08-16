@@ -22,24 +22,39 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-lg-4 col-md-6">
+                                    <div class="col-lg-6 col-md-6">
                                         <div class="mb-4">
                                             <label class="form-label">Job Title *</label>
                                             <input type="text" class="form-control" name="" value="Job Title">
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-6">
+                                    <div class="col-lg-6 col-md-6">
                                         <div class="mb-4">
                                             <label class="form-label">Job Location *</label>
                                             <input type="text" class="form-control" name="" value="Job Location">
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-6">
+                                  
+
+                                   
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
                                         <div class="mb-4">
                                             <label class="form-label">Job Category *</label>
                                             <input type="text" class="form-control" name="" value="Job Category">
                                         </div>
                                     </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="mb-4">
+                                            <label class="form-label">Search *</label>
+                                            <input type="text" class="form-control" name="" value="Search">
+                                        </div>
+                                    </div>
+                                  
+
+                                   
                                 </div>
 
                              
