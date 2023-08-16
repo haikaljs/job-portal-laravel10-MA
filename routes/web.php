@@ -53,7 +53,9 @@ Route::middleware(['admin:admin'])->group(function(){
 
     Route::post('/admin/home-page/update', [AdminHomePageController::class, 'update'])->name('admin_home_page_update');
 
-    Route::get('/admin/job-category', [AdminJobCategoryController::class, 'index'])->name('admin_job_category');
+    Route::get('/admin/job-category/view', [AdminJobCategoryController::class, 'index'])->name('admin_job_category');
+
+    Route::get('/admin/job-category/add', [AdminJobCategoryController::class, 'create'])->name('admin_job_category_create');
     
 });
 

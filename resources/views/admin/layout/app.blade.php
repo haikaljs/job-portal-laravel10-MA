@@ -30,9 +30,7 @@
             <section class="section">
                 <div class="section-header">
                     <h1>@yield('heading')</h1>
-                    {{-- <div class="ml-auto">
-                        <a href="" class="btn btn-primary"><i class="fas fa-plus"></i>Button</a>
-                    </div> --}}
+                    @yield('button')
                 </div>
                 @yield('main_content')
             </section>

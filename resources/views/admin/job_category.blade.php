@@ -1,14 +1,19 @@
 @extends('admin.layout.app')
 @section('heading', 'Job Categories')
 
+@section('button')
+    <div class="ml-auto">
+        <a href="{{ route('admin_job_category_create') }}" class="btn btn-primary"><i class="fas fa-plus"></i> Add New</a>
+    </div>
+@endsection
+
 @section('main_content')
 <div class="section-body">
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="" method="post" >
-                        @csrf
+                   
                         <div class="row">
                           
                             <div class="col-md-9">
@@ -54,7 +59,7 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
+                 
                 </div>
             </div>
         </div>
