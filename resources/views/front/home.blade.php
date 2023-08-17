@@ -138,7 +138,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="all">
-                    <a href="categories.html" class="btn btn-primary"
+                    <a href="{{ route('job_categories') }}" class="btn btn-primary"
                         >See All Categories</a
                     >
                 </div>
