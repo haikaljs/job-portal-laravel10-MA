@@ -9,7 +9,8 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                   
+                    <form action="{{ route('admin_home_page_update') }}" method="post" enctype="multipart/form-data">
+                        @csrf
 
                         <div class="row">
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-12">
@@ -18,7 +19,7 @@
                                         Search
                                     </a>
                                     <a class="nav-link" id="v-2-tab" data-toggle="pill" href="#v-2" role="tab" aria-controls="v-2" aria-selected="false">
-                                        Category
+                                        Job Category
                                     </a>
                                 </div>
                             </div>
@@ -30,8 +31,7 @@
                                             <div class="col-12">
                                                 <div class="card">
                                                     <div class="card-body">
-                                                        <form action="{{ route('admin_home_page_update') }}" method="post" enctype="multipart/form-data">
-                                                            @csrf
+                                                      
                                                             <div class="row">
                                                                
                                                                 <div class="col-md-12">
@@ -97,13 +97,10 @@
                                                                         </div>
                                                                         
                                                                     </div>
-                                                                    <div class="mb-4">
-                                                                        <label class="form-label"></label>
-                                                                        <button type="submit" class="btn btn-primary">Update</button>
-                                                                    </div>
+                                                                 
                                                                 </div>
                                                             </div>
-                                                        </form>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -111,25 +108,47 @@
                                         <!-- Search Item End -->
                                     </div>
 
+
+
                                     <div class="pt_0 tab-pane fade" id="v-2" role="tabpanel" aria-labelledby="v-2-tab">
                                         <!-- Text Item Start -->
                                         <div class="form-group mb-3">
-                                            <label>Text</label>
-                                            <input type="text" class="form-control" name="" value="123">
+                                                <label class="form-label">Heading *</label>
+                                                <input type="text" class="form-control" name="job_category_heading" value="{{ $page_home_data->job_category_heading }}">
+                                            
+                                        </div>
+                                        <div class="form-group mb-3">
+                                                <label class="form-label">Sub Heading *</label>
+                                                <input type="text" class="form-control" name="job_category_subheading" value="{{ $page_home_data->job_category_subheading }}">
+                                            
                                         </div>
                                         <div class="form-group mb-3">
                                             <label>Status</label>
-                                            <select name="recaptcha_status" class="form-control">
-                                                <option value="Show">Show</option>
-                                                <option value="Hide">Hide</option>
+                                            <select name="job_category_status" class="form-control select2">
+                                                <option value="Show" 
+                                                @if ($page_home_data->job_category_status == 'Show')
+                                                selected
+                                                @endif>Show</option>
+                                                <option value="Hide"
+                                                @if ($page_home_data->job_category_status== 'Hide')
+                                                selected
+                                                @endif
+                                                >Hide</option>
                                             </select>
                                         </div>
                                         <!-- Text Item End -->
                                     </div>
                                 </div>
+                                <div class="mb-4">
+                                    <label class="form-label"></label>
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                </div>
                             </div>
+                            
                         </div>
 
+                       
+                    </form>
                      
                 </div>
             </div>
