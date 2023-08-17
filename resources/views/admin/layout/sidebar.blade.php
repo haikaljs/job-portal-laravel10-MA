@@ -26,7 +26,7 @@
                 </ul>
             </li>
 
-            <li class="{{ Request::is('admin/why-choose/*')? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_why_choose_item_create') }}"><i class="fas fa-hand-point-right"></i> <span>Why Choose Items</span></a></li>
+            <li class="{{ Request::is('admin/why-choose/*')? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_why_choose_item') }}"><i class="fas fa-hand-point-right"></i> <span>Why Choose Items</span></a></li>
 
          
 

@@ -16,7 +16,7 @@
                    
                         <div class="row">
                           
-                            <div class="col-md-9">
+                            <div class="col-md-12">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="example1">
                                         <thead>

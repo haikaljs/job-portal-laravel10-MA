@@ -12,4 +12,25 @@ class AdminWhyChooseController extends Controller
         $why_choose_items = WhyChooseItem::get();
         return view('admin.why_choose_item', compact('why_choose_items'));
     }
+
+    public function create(){
+        return view('admin.why_choose_item_create');
+    }
+
+    public function store(Request $request){
+        $request->validate([
+            'icon' => 'required',
+            'heading' => 'required',
+            'text' => 'required'
+        
+        ]);
+
+        $obj = new WhyChooseItem();
+        $obj->icon = $request->icon;
+        $obj->heading = $request->heading;
+        $obj->text = $request->text;
+        $obj->save();
+
+        return redirect()->route('admin_why_choose_item')->with('success', 'Data successfully saved');
+    }
 }
